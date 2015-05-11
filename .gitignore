@@ -127,3 +127,4 @@ tmp/
 
 # TeXlipse plugin
 .texlipse
+.solano*
