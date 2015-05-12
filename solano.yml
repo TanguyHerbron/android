@@ -16,11 +16,10 @@ java:
 
 # timeout_hook values must be long enough for the initial android-sdk and gradle installs. 
 # Subsequent Solano sessions will use cached versions.
-timeout_hook: 600
-timeout: 600
+timeout_hook: 300
 
 tests: # For faster results, split tests into individual commands to allow them to run in parallel
-  - 'export ANDROID_HOME="$HOME/android-sdk-linux" && ./gradlew tasks --all' # Just a list of all available gradle tasks
-  - 'export ANDROID_HOME="$HOME/android-sdk-linux" && ./gradlew app:testDebug' # Run unit tests for the Debug build. [app:compileDebugUnitTestSources, app:mockableAndroidJar]
-  - 'export ANDROID_HOME="$HOME/android-sdk-linux" && ./gradlew app:testRelease' # Run unit tests for the Release build. [app:compileReleaseUnitTestSources, app:mockableAndroidJar]
-#  - 'export ANDROID_HOME="$HOME/android-sdk-linux" && ./gradlew build' # Assembles and tests this project. [app:assemble, app:check]
+  - 'export ANDROID_HOME="$HOME/android-sdk-linux" && ./gradlew tasks --all'
+  - 'export ANDROID_HOME="$HOME/android-sdk-linux" && ./gradlew app:testDebug'
+  - 'export ANDROID_HOME="$HOME/android-sdk-linux" && ./gradlew app:testRelease'
+#  - 'export ANDROID_HOME="$HOME/android-sdk-linux" && ./gradlew build'
